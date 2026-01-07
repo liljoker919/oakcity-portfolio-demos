@@ -56,7 +56,7 @@ const siteConfig = {
           <h2 style="text-align: left; margin-bottom: 1.5rem;">Request a Quote</h2>
           <!-- Note: This is a demo form. In production, configure the action attribute 
                to use a form handling service like Netlify Forms, Formspree, or AWS API Gateway -->
-          <form class="card">
+          <form class="card" action="#" onsubmit="event.preventDefault(); alert('This is a demo form. Configure a form handler for production use.');">
             <div class="form-group">
               <label for="name">Full Name *</label>
               <input type="text" id="name" name="name" required />

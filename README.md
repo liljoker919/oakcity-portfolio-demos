@@ -90,18 +90,40 @@ Located at `shared/components/Layout.astro`, this component provides:
 - Footer with contact information and links
 - SEO meta tags
 - Consistent styling across all sites
+- Configurable branding via props
+
+**Props:**
+- `title` (required): Page title for SEO
+- `description` (optional): Page description for SEO
+- `siteName` (optional): Business name (default: "Oak City Services")
+- `siteTagline` (optional): Business tagline (default: "Professional services for your business")
+- `contactEmail` (optional): Contact email (default: "info@oakcityservices.com")
+- `contactPhone` (optional): Contact phone (default: "(555) 123-4567")
 
 Usage in pages:
 ```astro
 ---
-import Layout from '../../../shared/components/Layout.astro';
-import '../../../shared/styles/global.css';
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+
+const siteConfig = {
+  siteName: 'Your Business Name',
+  siteTagline: 'Your business tagline',
+  contactEmail: 'info@yourbusiness.com',
+  contactPhone: '(555) 123-4567'
+};
 ---
 
-<Layout title="Page Title" description="Page description">
+<Layout 
+  title="Page Title" 
+  description="Page description"
+  {...siteConfig}
+>
   <!-- Your page content -->
 </Layout>
 ```
+
+**Note:** The `@shared` alias is configured in each site's `astro.config.mjs` to simplify imports from the shared directory.
 
 ### Global Styles
 
