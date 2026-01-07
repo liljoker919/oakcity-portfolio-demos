@@ -95,10 +95,10 @@ Located at `shared/components/Layout.astro`, this component provides:
 **Props:**
 - `title` (required): Page title for SEO
 - `description` (optional): Page description for SEO
-- `siteName` (optional): Business name (default: "Oak City Services")
+- `siteName` (optional): Business name (default: "Your Business")
 - `siteTagline` (optional): Business tagline (default: "Professional services for your business")
-- `contactEmail` (optional): Contact email (default: "info@oakcityservices.com")
-- `contactPhone` (optional): Contact phone (default: "(555) 123-4567")
+- `contactEmail` (optional): Contact email (default: "info@yourbusiness.com")
+- `contactPhone` (optional): Contact phone (default: "(555) 000-0000")
 
 Usage in pages:
 ```astro
