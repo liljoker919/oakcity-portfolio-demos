@@ -1,0 +1,144 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+---
+
+<Layout title="Contact Us - Oak City Cleaning" description="Get in touch with Oak City Cleaning for a free quote or to schedule your cleaning service">
+  <div class="hero">
+    <div class="content-container">
+      <h1>Contact Us</h1>
+      <p>Get a free quote or schedule your cleaning service today</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+        <div>
+          <h2 style="text-align: left; margin-bottom: 1.5rem;">Get In Touch</h2>
+          <div class="card">
+            <h3>📞 Phone</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+              <a href="tel:5551234567" style="color: #3498db; text-decoration: none;">(555) 123-4567</a>
+            </p>
+            
+            <h3>📧 Email</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+              <a href="mailto:info@oakcitycleaning.com" style="color: #3498db; text-decoration: none;">info@oakcitycleaning.com</a>
+            </p>
+            
+            <h3>📍 Service Area</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+              Oak City and surrounding areas
+            </p>
+            
+            <h3>🕐 Business Hours</h3>
+            <p style="font-size: 1.1rem;">
+              Monday - Friday: 8:00 AM - 6:00 PM<br>
+              Saturday: 9:00 AM - 4:00 PM<br>
+              Sunday: Closed
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="text-align: left; margin-bottom: 1.5rem;">Request a Quote</h2>
+          <form class="card" method="POST" action="/api/contact">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Type *</label>
+              <select id="service" name="service" required>
+                <option value="">Select a service...</option>
+                <option value="residential">Residential Cleaning</option>
+                <option value="commercial">Commercial Cleaning</option>
+                <option value="deep">Deep Cleaning</option>
+                <option value="move">Move In/Out Cleaning</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell us about your cleaning needs *</label>
+              <textarea id="message" name="message" required placeholder="Please describe the size of your space, specific cleaning requirements, and preferred schedule..."></textarea>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">Submit Request</button>
+
+            <p style="font-size: 0.9rem; color: #666; margin-top: 1rem; text-align: center;">
+              We'll respond to your inquiry within 24 hours during business days.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Why Choose Oak City Cleaning?</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card">
+          <h3>✅ Free Quotes</h3>
+          <p>No obligation, transparent pricing for all our services.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Flexible Scheduling</h3>
+          <p>We work around your schedule, including evenings and weekends.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Satisfaction Guaranteed</h3>
+          <p>If you're not happy, we'll make it right—no questions asked.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Eco-Friendly</h3>
+          <p>Safe, green cleaning products that protect your family and pets.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>Do I need to be home during the cleaning?</h3>
+          <p>No, many of our clients provide us with access and go about their day. We're fully insured and bonded for your peace of mind.</p>
+        </div>
+        
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>What if I need to reschedule?</h3>
+          <p>We understand life happens! Just give us 24 hours notice and we'll be happy to reschedule your appointment.</p>
+        </div>
+        
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>Do you bring your own supplies?</h3>
+          <p>Yes! We bring all necessary cleaning supplies and equipment. If you have specific products you'd like us to use, just let us know.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    section .content-container > div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
