@@ -1,9 +1,20 @@
 ---
 import Layout from '@shared/components/Layout.astro';
 import '@shared/styles/global.css';
+
+const siteConfig = {
+  siteName: 'Oak City Cleaning',
+  siteTagline: 'Professional cleaning services you can trust.',
+  contactEmail: 'info@oakcitycleaning.com',
+  contactPhone: '(555) 123-4567'
+};
 ---
 
-<Layout title="Oak City Cleaning - Professional Cleaning Services" description="Professional residential and commercial cleaning services you can trust">
+<Layout 
+  title="Oak City Cleaning - Professional Cleaning Services" 
+  description="Professional residential and commercial cleaning services you can trust"
+  {...siteConfig}
+>
   <div class="hero">
     <div class="content-container">
       <h1>Professional Cleaning Services</h1>

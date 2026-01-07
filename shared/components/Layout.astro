@@ -2,9 +2,20 @@
 interface Props {
   title: string;
   description?: string;
+  siteName?: string;
+  siteTagline?: string;
+  contactEmail?: string;
+  contactPhone?: string;
 }
 
-const { title, description = 'Professional services for your business' } = Astro.props;
+const { 
+  title, 
+  description = 'Professional services for your business',
+  siteName = 'Oak City Services',
+  siteTagline = 'Professional services you can trust.',
+  contactEmail = 'info@oakcityservices.com',
+  contactPhone = '(555) 123-4567'
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -20,7 +31,7 @@ const { title, description = 'Professional services for your business' } = Astro
     <header>
       <nav class="container">
         <div class="nav-brand">
-          <a href="/">Oak City Services</a>
+          <a href="/">{siteName}</a>
         </div>
         <ul class="nav-links">
           <li><a href="/">Home</a></li>
@@ -39,8 +50,8 @@ const { title, description = 'Professional services for your business' } = Astro
       <div class="container">
         <div class="footer-content">
           <div class="footer-section">
-            <h3>Oak City Services</h3>
-            <p>Professional services you can trust.</p>
+            <h3>{siteName}</h3>
+            <p>{siteTagline}</p>
           </div>
           <div class="footer-section">
             <h3>Quick Links</h3>
@@ -53,12 +64,12 @@ const { title, description = 'Professional services for your business' } = Astro
           </div>
           <div class="footer-section">
             <h3>Contact</h3>
-            <p>Email: info@oakcityservices.com</p>
-            <p>Phone: (555) 123-4567</p>
+            <p>Email: {contactEmail}</p>
+            <p>Phone: {contactPhone}</p>
           </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Oak City Services. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} {siteName}. All rights reserved.</p>
         </div>
       </div>
     </footer>

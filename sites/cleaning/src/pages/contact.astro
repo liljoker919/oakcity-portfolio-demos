@@ -1,9 +1,20 @@
 ---
 import Layout from '@shared/components/Layout.astro';
 import '@shared/styles/global.css';
+
+const siteConfig = {
+  siteName: 'Oak City Cleaning',
+  siteTagline: 'Professional cleaning services you can trust.',
+  contactEmail: 'info@oakcitycleaning.com',
+  contactPhone: '(555) 123-4567'
+};
 ---
 
-<Layout title="Contact Us - Oak City Cleaning" description="Get in touch with Oak City Cleaning for a free quote or to schedule your cleaning service">
+<Layout 
+  title="Contact Us - Oak City Cleaning" 
+  description="Get in touch with Oak City Cleaning for a free quote or to schedule your cleaning service"
+  {...siteConfig}
+>
   <div class="hero">
     <div class="content-container">
       <h1>Contact Us</h1>
@@ -43,7 +54,9 @@ import '@shared/styles/global.css';
 
         <div>
           <h2 style="text-align: left; margin-bottom: 1.5rem;">Request a Quote</h2>
-          <form class="card" method="POST" action="/api/contact">
+          <!-- Note: This is a demo form. In production, configure the action attribute 
+               to use a form handling service like Netlify Forms, Formspree, or AWS API Gateway -->
+          <form class="card">
             <div class="form-group">
               <label for="name">Full Name *</label>
               <input type="text" id="name" name="name" required />
