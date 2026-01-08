@@ -1,0 +1,186 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`Services - ${siteConfig.siteName}`}
+  description="Professional virtual assistant and freelance services including admin support, scheduling, content management, and more"
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>Virtual Assistant Services</h1>
+      <p>Professional support tailored to your business needs</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Administrative Support Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Email Management</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Inbox organization and filtering</li>
+            <li>✓ Priority message identification</li>
+            <li>✓ Response drafting and sending</li>
+            <li>✓ Spam and unsubscribe management</li>
+            <li>✓ Follow-up tracking</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $25/hour</p>
+        </div>
+        
+        <div class="card">
+          <h3>Data Entry & Organization</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Database management</li>
+            <li>✓ Spreadsheet creation and updates</li>
+            <li>✓ Document formatting</li>
+            <li>✓ File organization and naming</li>
+            <li>✓ CRM data entry</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $25/hour</p>
+        </div>
+        
+        <div class="card">
+          <h3>Document Management</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Document creation and editing</li>
+            <li>✓ Template development</li>
+            <li>✓ Proofreading and formatting</li>
+            <li>✓ PDF conversion and organization</li>
+            <li>✓ Cloud storage management</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $30/hour</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Scheduling & Coordination</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Calendar Management</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Appointment scheduling</li>
+            <li>✓ Meeting coordination</li>
+            <li>✓ Calendar optimization</li>
+            <li>✓ Reminder and notification setup</li>
+            <li>✓ Time zone coordination</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $30/hour</p>
+        </div>
+        
+        <div class="card">
+          <h3>Travel Arrangements</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Flight and hotel booking</li>
+            <li>✓ Itinerary creation</li>
+            <li>✓ Transportation coordination</li>
+            <li>✓ Travel document organization</li>
+            <li>✓ Expense tracking</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $35/hour</p>
+        </div>
+        
+        <div class="card">
+          <h3>Event Coordination</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Virtual meeting setup</li>
+            <li>✓ Attendee management</li>
+            <li>✓ Agenda preparation</li>
+            <li>✓ Follow-up coordination</li>
+            <li>✓ Materials preparation</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $35/hour</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Content & Communication Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Content Writing</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Blog posts and articles</li>
+            <li>✓ Social media content</li>
+            <li>✓ Email newsletters</li>
+            <li>✓ Website copy</li>
+            <li>✓ Product descriptions</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $40/hour</p>
+        </div>
+        
+        <div class="card">
+          <h3>Social Media Management</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Post scheduling and publishing</li>
+            <li>✓ Content calendar management</li>
+            <li>✓ Community engagement</li>
+            <li>✓ Basic analytics reporting</li>
+            <li>✓ Hashtag research</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $35/hour</p>
+        </div>
+        
+        <div class="card">
+          <h3>Customer Communication</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Email correspondence</li>
+            <li>✓ Customer inquiry responses</li>
+            <li>✓ Follow-up communications</li>
+            <li>✓ Newsletter management</li>
+            <li>✓ Communication templates</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #3498db;">Starting at $30/hour</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Specialized Services</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card">
+          <h3>Research & Analysis</h3>
+          <p>Market research, competitor analysis, and data compilation for informed decision-making.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Project Management</h3>
+          <p>Task coordination, timeline tracking, and team communication for project success.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Customer Service Support</h3>
+          <p>Professional customer inquiry handling and support ticket management.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Bookkeeping Assistance</h3>
+          <p>Basic expense tracking, invoice management, and financial record organization.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <h2>Ready to Work Together?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Let's discuss your needs and how I can support your business. Schedule a free discovery call to explore how virtual assistance can help you achieve more.
+        </p>
+        <a href="/contact" class="btn">{siteConfig.cta.secondary}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
