@@ -1,0 +1,83 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import '../styles/custom.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`${siteConfig.siteName} - Professional Home Repair & Maintenance`}
+  description="Professional handyman and home repair services for all your maintenance needs"
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>Professional Home Repair Services</h1>
+      <p>Your trusted handyman for quality repairs, installations, and home improvements</p>
+      <a href="/contact" class="btn">{siteConfig.cta.primary}</a>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Why Choose {siteConfig.siteName}?</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🔧 General Repairs</h3>
+          <p>From fixing leaky faucets to patching drywall, we handle all your home repair needs with expertise and efficiency.</p>
+        </div>
+        <div class="card">
+          <h3>🛠️ Installations</h3>
+          <p>Professional installation services for fixtures, appliances, shelving, and more. Done right the first time.</p>
+        </div>
+        <div class="card">
+          <h3>🏠 Home Improvements</h3>
+          <p>Transform your space with quality carpentry, painting, and remodeling services that add value to your home.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Our Commitment to Quality</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          At {siteConfig.siteName}, we understand that maintaining your home is important. 
+          That's why we provide skilled craftsmanship, reliable service, and complete satisfaction with every job, 
+          whether it's a small repair or a major improvement project.
+        </p>
+        <p style="font-size: 1.1rem;">
+          Our experienced professionals are licensed, insured, and dedicated to exceeding your expectations with 
+          quality workmanship and attention to detail.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="/services" class="btn">View Our Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Customer Testimonials</h2>
+      <div class="grid">
+        <div class="card">
+          <p>"{siteConfig.siteName} fixed our plumbing issues quickly and professionally. Great work at a fair price!"</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- Michael T.</p>
+        </div>
+        <div class="card">
+          <p>"Reliable, skilled, and honest. They installed our ceiling fans and did a fantastic job. Highly recommend!"</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- Jennifer L.</p>
+        </div>
+        <div class="card">
+          <p>"From small repairs to bigger projects, they handle everything with professionalism. Our go-to handyman service!"</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- Robert K.</p>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #666; font-style: italic;">
+        *Testimonials are representative examples for demonstration purposes only.
+      </p>
+    </div>
+  </section>
+</Layout>

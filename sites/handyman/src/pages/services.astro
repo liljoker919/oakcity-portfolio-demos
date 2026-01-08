@@ -1,0 +1,188 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import '../styles/custom.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`Our Services - ${siteConfig.siteName}`}
+  description="Comprehensive home repair, maintenance, and improvement services for all your needs"
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>Our Handyman Services</h1>
+      <p>Professional home repair and improvement solutions</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Repair Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Plumbing Repairs</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Leaky faucet repairs</li>
+            <li>✓ Toilet repairs and installation</li>
+            <li>✓ Drain cleaning and repairs</li>
+            <li>✓ Pipe repairs and replacement</li>
+            <li>✓ Water heater maintenance</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Starting at $89</p>
+        </div>
+        
+        <div class="card">
+          <h3>Electrical Work</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Light fixture installation</li>
+            <li>✓ Outlet and switch repair</li>
+            <li>✓ Ceiling fan installation</li>
+            <li>✓ GFCI outlet installation</li>
+            <li>✓ Minor electrical repairs</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Starting at $99</p>
+        </div>
+        
+        <div class="card">
+          <h3>Drywall & Painting</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Hole and crack repair</li>
+            <li>✓ Drywall installation</li>
+            <li>✓ Interior painting</li>
+            <li>✓ Texture matching</li>
+            <li>✓ Trim and molding repair</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Starting at $79</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Installation Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Fixture Installation</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Door hardware installation</li>
+            <li>✓ Cabinet hardware</li>
+            <li>✓ Towel bars and hooks</li>
+            <li>✓ Grab bars and safety rails</li>
+            <li>✓ Curtain rods and blinds</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Starting at $69</p>
+        </div>
+        
+        <div class="card">
+          <h3>Shelving & Storage</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Floating shelf installation</li>
+            <li>✓ Closet organizers</li>
+            <li>✓ Garage storage systems</li>
+            <li>✓ TV mounting</li>
+            <li>✓ Custom shelving</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Starting at $89</p>
+        </div>
+        
+        <div class="card">
+          <h3>Appliance Installation</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Dishwasher installation</li>
+            <li>✓ Garbage disposal installation</li>
+            <li>✓ Microwave mounting</li>
+            <li>✓ Range hood installation</li>
+            <li>✓ Water filtration systems</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Custom pricing</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Home Improvement Services</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>Carpentry Work</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Door repairs and replacement</li>
+            <li>✓ Window repairs</li>
+            <li>✓ Crown molding installation</li>
+            <li>✓ Baseboard installation</li>
+            <li>✓ Custom trim work</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Custom quotes</p>
+        </div>
+        
+        <div class="card">
+          <h3>Flooring Repairs</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Hardwood floor repairs</li>
+            <li>✓ Tile repair and replacement</li>
+            <li>✓ Laminate floor installation</li>
+            <li>✓ Vinyl plank installation</li>
+            <li>✓ Floor transitions</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Project-based pricing</p>
+        </div>
+        
+        <div class="card">
+          <h3>Deck & Fence Repairs</h3>
+          <ul style="list-style: none; padding-left: 0;">
+            <li>✓ Deck board replacement</li>
+            <li>✓ Fence post repairs</li>
+            <li>✓ Gate installation and repair</li>
+            <li>✓ Deck staining and sealing</li>
+            <li>✓ Railing repairs</li>
+          </ul>
+          <p style="margin-top: 1rem; font-weight: bold; color: #e67e22;">Custom estimates</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Specialty Services</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card">
+          <h3>Kitchen Updates</h3>
+          <p>Cabinet hardware, backsplash installation, and minor kitchen improvements.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Bathroom Upgrades</h3>
+          <p>Vanity installation, shower fixtures, and bathroom hardware upgrades.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Smart Home Installation</h3>
+          <p>Smart thermostats, doorbell cameras, and home automation setup.</p>
+        </div>
+        
+        <div class="card">
+          <h3>Weatherproofing</h3>
+          <p>Caulking, weatherstripping, and sealing to improve energy efficiency.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+        <h2>Ready to Get Started?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Contact us today for a free consultation and estimate. We'll assess your project and provide 
+          a detailed quote with no obligation.
+        </p>
+        <a href="/contact" class="btn">{siteConfig.cta.secondary}</a>
+      </div>
+    </div>
+  </section>
+</Layout>

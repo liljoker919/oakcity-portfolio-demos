@@ -1,0 +1,28 @@
+/* Custom color scheme for handyman site */
+/* Override the default blue colors with orange/amber theme */
+
+:root {
+  --primary-color: #e67e22; /* Orange for handyman/construction theme */
+  --secondary-color: #2c3e50; /* Keep the same dark blue-grey */
+  --accent-color: #d35400; /* Darker orange for accents */
+}
+
+.hero {
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.footer-section h3 {
+  color: var(--primary-color);
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+.footer-section a:hover {
+  color: var(--primary-color);
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+}

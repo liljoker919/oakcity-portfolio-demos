@@ -10,7 +10,10 @@
   "scripts": {
     "dev:cleaning": "npm run dev --workspace=sites/cleaning",
     "build:cleaning": "npm run build --workspace=sites/cleaning",
-    "preview:cleaning": "npm run preview --workspace=sites/cleaning"
+    "preview:cleaning": "npm run preview --workspace=sites/cleaning",
+    "dev:handyman": "npm run dev --workspace=sites/handyman",
+    "build:handyman": "npm run build --workspace=sites/handyman",
+    "preview:handyman": "npm run preview --workspace=sites/handyman"
   },
   "keywords": [
     "astro",
