@@ -1,0 +1,209 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`About - ${siteConfig.siteName}`}
+  description="Meet your coach. Learn about my certifications, experience, and commitment to your transformation."
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>About Your Coach</h1>
+      <p>Dedicated to your transformation since {siteConfig.foundedYear}</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2>My Story</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          I didn't start as the "fit person." I was overweight, unmotivated, and struggling with confidence. 
+          After my own transformation, I realized my purpose: helping others break through the same barriers 
+          I once faced.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          For over 10 years, I've helped hundreds of clients transform not just their bodies, but their entire 
+          approach to health, fitness, and life. I understand the challenges because I've lived them. And I know 
+          what it takes to succeed because I've been there.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          My coaching philosophy is simple: sustainable results through individualized programming, honest 
+          communication, and unwavering support. No gimmicks, no quick fixes—just proven strategies that work.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>My Approach</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🎯 Results-Driven</h3>
+          <p>Every program is designed with your specific goals in mind. We track progress, measure results, and adjust as needed.</p>
+        </div>
+        <div class="card">
+          <h3>🧠 Science-Based</h3>
+          <p>I use evidence-based training and nutrition principles—no fads, just proven methods that deliver results.</p>
+        </div>
+        <div class="card">
+          <h3>💪 Sustainable</h3>
+          <p>Quick fixes don't last. I teach you sustainable habits and strategies that you can maintain for life.</p>
+        </div>
+        <div class="card">
+          <h3>🤝 Supportive</h3>
+          <p>You're not just a client—you're a partner in this journey. I'm with you every step of the way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Certifications & Education</h2>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>NASM Certified Personal Trainer (CPT)</h3>
+          <p>
+            The gold standard in personal training certification. Comprehensive training in exercise science, 
+            program design, and injury prevention.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Precision Nutrition Level 2 Certified</h3>
+          <p>
+            Advanced certification in nutrition coaching, behavior change psychology, and sustainable lifestyle 
+            transformation. Trained to work with clients of all backgrounds and goals.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Certified Strength & Conditioning Specialist</h3>
+          <p>
+            Specialized training in athletic performance, periodization, and advanced programming for serious 
+            athletes and high performers.
+          </p>
+        </div>
+        
+        <div class="card">
+          <h3>Continuing Education</h3>
+          <p>
+            I invest 100+ hours annually in continuing education to stay current with the latest research, 
+            techniques, and coaching methods. Your success depends on my knowledge staying sharp.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Trust & Safety</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>✅ Fully Insured</h3>
+          <p>Comprehensive liability insurance for your protection and peace of mind during all training sessions.</p>
+        </div>
+        <div class="card">
+          <h3>✅ CPR/AED Certified</h3>
+          <p>Current certifications in CPR and AED usage to ensure your safety during every session.</p>
+        </div>
+        <div class="card">
+          <h3>✅ Background Checked</h3>
+          <p>Complete background screening to provide a safe, professional environment.</p>
+        </div>
+        <div class="card">
+          <h3>✅ HIPAA Compliant</h3>
+          <p>Your personal health information is protected with strict privacy and security measures.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>What Makes Me Different</h2>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Individual Attention</h3>
+          <p>
+            I limit the number of clients I work with to ensure everyone gets the attention they deserve. 
+            You're not a number—you're an individual with unique needs and goals.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Honest Communication</h3>
+          <p>
+            I'll tell you what you need to hear, not just what you want to hear. Success requires honesty, 
+            and I'm committed to your long-term results over short-term comfort.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Flexible & Adaptive</h3>
+          <p>
+            Life happens. Work gets busy. Injuries occur. I adapt your program to work with your life, 
+            not against it. Sustainability is key to lasting transformation.
+          </p>
+        </div>
+        
+        <div class="card">
+          <h3>Results Guarantee</h3>
+          <p>
+            If you follow the program consistently and don't see results in 90 days, I'll work with you 
+            for free until you do. Your success is my success.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Who I Work With</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          I work with people from all backgrounds and fitness levels—from complete beginners to seasoned athletes. 
+          What matters most is your commitment to change and your willingness to trust the process.
+        </p>
+        <div class="grid" style="margin-top: 2rem;">
+          <div class="card">
+            <h3>Busy Professionals</h3>
+            <p>Limited time but big goals? I'll help you maximize results in minimal time.</p>
+          </div>
+          <div class="card">
+            <h3>Weight Loss</h3>
+            <p>Transform your body and reclaim your confidence with sustainable fat loss strategies.</p>
+          </div>
+          <div class="card">
+            <h3>Athletes</h3>
+            <p>Take your performance to the next level with specialized strength and conditioning.</p>
+          </div>
+          <div class="card">
+            <h3>Post-Rehab</h3>
+            <p>Returning from injury? I'll help you rebuild strength safely and effectively.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2>Ready to Start Your Journey?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Let's talk about your goals and create a plan that works for you. Book your free consultation 
+          today—no pressure, just honest conversation about what it takes to succeed.
+        </p>
+        <a href="/contact" class="btn">{siteConfig.cta.tertiary}</a>
+      </div>
+    </div>
+  </section>
+</Layout>

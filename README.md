@@ -89,6 +89,17 @@ To create a new demo site, simply:
 2. Update `src/config/siteConfig.ts` with new branding
 3. Customize niche-specific content and imagery
 
+### Personal Training / Coaching
+
+The coaching demo site targets personal trainers, coaches, and consultants with transformation-focused messaging:
+
+- ✅ Results-driven copy focused on transformation
+- ✅ Primary CTA: "Book a Free Consultation"
+- ✅ Success stories with specific results
+- ✅ Trust indicators (certifications, credentials, insurance)
+- ✅ Comprehensive service packages (1-on-1, online, group)
+- ✅ Mobile-first responsive design
+
 ## 📄 Pages Structure
 
 Each demo site includes the following pages:

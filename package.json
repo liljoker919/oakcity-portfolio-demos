@@ -13,7 +13,10 @@
     "preview:cleaning": "npm run preview --workspace=sites/cleaning",
     "dev:handyman": "npm run dev --workspace=sites/handyman",
     "build:handyman": "npm run build --workspace=sites/handyman",
-    "preview:handyman": "npm run preview --workspace=sites/handyman"
+    "preview:handyman": "npm run preview --workspace=sites/handyman",
+    "dev:coach": "npm run dev --workspace=sites/coach",
+    "build:coach": "npm run build --workspace=sites/coach",
+    "preview:coach": "npm run preview --workspace=sites/coach"
   },
   "keywords": [
     "astro",
