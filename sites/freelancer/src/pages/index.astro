@@ -1,0 +1,81 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`${siteConfig.siteName} - Virtual Assistant & Freelance Services`}
+  description="Professional virtual assistant and freelance services for busy professionals and businesses"
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>Professional Virtual Assistant Services</h1>
+      <p>Reliable support that helps you focus on what matters most</p>
+      <a href="/contact" class="btn">{siteConfig.cta.primary}</a>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>How I Can Help Your Business</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>📋 Administrative Support</h3>
+          <p>Efficient management of emails, calendar, data entry, and document organization to keep your business running smoothly.</p>
+        </div>
+        <div class="card">
+          <h3>📅 Scheduling & Coordination</h3>
+          <p>Expert calendar management, meeting scheduling, travel arrangements, and event coordination for busy professionals.</p>
+        </div>
+        <div class="card">
+          <h3>✍️ Content & Communication</h3>
+          <p>Professional writing, editing, social media management, and customer correspondence to maintain your brand voice.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Why Work With Me</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          As a dedicated virtual assistant, I understand that your time is valuable. 
+          I provide reliable, detail-oriented support that allows you to focus on growing your business and serving your clients.
+        </p>
+        <p style="font-size: 1.1rem;">
+          With strong organizational skills, clear communication, and a commitment to excellence, 
+          I deliver professional support tailored to your unique needs.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="/services" class="btn">View All Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Client Success Stories</h2>
+      <div class="grid">
+        <div class="card">
+          <p>"Working with {siteConfig.siteName} has been a game-changer. My calendar is organized, my inbox is managed, and I have more time to focus on my clients."</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- Michael T., Consultant</p>
+        </div>
+        <div class="card">
+          <p>"Reliable, professional, and proactive. The administrative support has allowed our team to be much more productive."</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- Jennifer L., Small Business Owner</p>
+        </div>
+        <div class="card">
+          <p>"Excellent communication and attention to detail. I highly recommend these virtual assistant services."</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- David R., Entrepreneur</p>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #666; font-style: italic;">
+        *Testimonials are representative examples for demonstration purposes only.
+      </p>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,119 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`About - ${siteConfig.siteName}`}
+  description="Learn about our professional virtual assistant services and commitment to supporting your success"
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>About {siteConfig.siteName}</h1>
+      <p>Professional virtual assistance helping businesses thrive since {siteConfig.foundedYear}</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2>Your Partner in Success</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          {siteConfig.siteName} was created to help busy professionals and entrepreneurs reclaim their time 
+          and focus on what they do best. With years of experience in administrative support, project coordination, 
+          and business operations, I provide reliable virtual assistance that keeps your business running smoothly.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          I understand that as a business owner or professional, your time is your most valuable asset. 
+          That's why I offer flexible, efficient support services that adapt to your unique needs and work style. 
+          From managing your calendar to handling customer communications, I'm here to make your workday more productive.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Core Values</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🎯 Professionalism</h3>
+          <p>Delivering high-quality work with attention to detail, clear communication, and consistent reliability.</p>
+        </div>
+        <div class="card">
+          <h3>⚡ Efficiency</h3>
+          <p>Streamlining processes and managing tasks effectively to maximize your productivity and time.</p>
+        </div>
+        <div class="card">
+          <h3>🤝 Confidentiality</h3>
+          <p>Maintaining the highest standards of discretion and security with all sensitive business information.</p>
+        </div>
+        <div class="card">
+          <h3>💡 Proactive Support</h3>
+          <p>Anticipating needs and providing solutions before problems arise, keeping your operations seamless.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>What Sets Me Apart</h2>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Experienced Professional</h3>
+          <p>
+            With extensive experience across various industries, I bring a wealth of knowledge in administrative 
+            operations, project management, and business communication. I understand the nuances of professional 
+            business practices and deliver services that reflect your brand standards.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Personalized Service</h3>
+          <p>
+            Every business is unique, and so are your needs. I take the time to understand your goals, preferences, 
+            and work style to provide customized support that truly makes a difference in your daily operations.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Tech-Savvy Approach</h3>
+          <p>
+            Proficient in a wide range of business tools and platforms including G Suite, Microsoft Office, 
+            project management software, CRM systems, and collaboration tools. I adapt quickly to your existing 
+            systems and workflows.
+          </p>
+        </div>
+        
+        <div class="card">
+          <h3>Flexible & Reliable</h3>
+          <p>
+            {siteConfig.siteName} offers flexible scheduling to match your business hours and time zone. 
+            I'm committed to meeting deadlines, maintaining consistent communication, and being a dependable 
+            partner you can count on.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Service Availability</h2>
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          {siteConfig.serviceArea}. I work with clients across different industries including 
+          consulting, coaching, real estate, e-commerce, and professional services.
+        </p>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Ready to explore how virtual assistance can transform your business operations? 
+          Let's schedule a free discovery call to discuss your needs.
+        </p>
+        <a href="/contact" class="btn">{siteConfig.cta.secondary}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
