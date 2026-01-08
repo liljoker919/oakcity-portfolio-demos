@@ -1,0 +1,23 @@
+{
+  "name": "oakcity-portfolio-demos",
+  "version": "1.0.0",
+  "description": "Astro-based portfolio demo websites for small business niches, deployed as static sites to AWS S3 and CloudFront for use on oakcitysoftwaresolutions.com.",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "sites/*"
+  ],
+  "scripts": {
+    "dev:cleaning": "npm run dev --workspace=sites/cleaning",
+    "build:cleaning": "npm run build --workspace=sites/cleaning",
+    "preview:cleaning": "npm run preview --workspace=sites/cleaning"
+  },
+  "keywords": [
+    "astro",
+    "portfolio",
+    "static-sites",
+    "monorepo"
+  ],
+  "author": "",
+  "license": "ISC"
+}

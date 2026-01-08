@@ -1,0 +1,121 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+
+const siteConfig = {
+  siteName: 'Oak City Cleaning',
+  siteTagline: 'Professional cleaning services you can trust.',
+  contactEmail: 'info@oakcitycleaning.com',
+  contactPhone: '(555) 123-4567'
+};
+---
+
+<Layout 
+  title="About Us - Oak City Cleaning" 
+  description="Learn about our professional cleaning team and our commitment to excellence"
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>About Oak City Cleaning</h1>
+      <p>Your trusted partner in professional cleaning services since 2020</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2>Our Story</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          Oak City Cleaning was founded with a simple mission: to provide reliable, high-quality cleaning services 
+          that make our clients' lives easier. What started as a small team of dedicated professionals has grown 
+          into a trusted cleaning service serving homes and businesses throughout the Oak City area.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          We believe that a clean space is more than just aesthetics—it's about health, productivity, and peace of mind. 
+          That's why we approach every job with the same level of care and attention to detail, whether it's a small 
+          apartment or a large commercial facility.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Our Values</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🎯 Excellence</h3>
+          <p>We strive for perfection in every cleaning job, paying attention to the details that matter most to our clients.</p>
+        </div>
+        <div class="card">
+          <h3>🤝 Reliability</h3>
+          <p>You can count on us to show up on time, every time, with the same commitment to quality service.</p>
+        </div>
+        <div class="card">
+          <h3>🔒 Trustworthiness</h3>
+          <p>All our team members are background-checked, insured, and trained to respect your space and privacy.</p>
+        </div>
+        <div class="card">
+          <h3>🌍 Sustainability</h3>
+          <p>We prioritize eco-friendly cleaning products and practices that are safe for your family and the environment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Why Choose Us?</h2>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Experienced Team</h3>
+          <p>
+            Our cleaning professionals undergo rigorous training and have years of experience in both residential 
+            and commercial cleaning. We stay updated on the latest cleaning techniques and safety protocols.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Customized Service</h3>
+          <p>
+            We understand that every space is unique. That's why we work with you to create a customized cleaning 
+            plan that addresses your specific needs, schedule, and budget.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Quality Guarantee</h3>
+          <p>
+            We stand behind our work. If you're not completely satisfied with our service, we'll make it right. 
+            Your satisfaction is our top priority.
+          </p>
+        </div>
+        
+        <div class="card">
+          <h3>Fully Insured & Bonded</h3>
+          <p>
+            For your peace of mind, Oak City Cleaning is fully insured and bonded. We take every precaution to 
+            protect your property and belongings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Our Service Area</h2>
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          We proudly serve the Oak City metropolitan area and surrounding communities. Whether you're in the 
+          city center or the suburbs, we're here to help keep your space clean and comfortable.
+        </p>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Not sure if we service your area? Give us a call—we're always expanding our reach to serve more customers!
+        </p>
+        <a href="/contact" class="btn">Contact Us Today</a>
+      </div>
+    </div>
+  </section>
+</Layout>
