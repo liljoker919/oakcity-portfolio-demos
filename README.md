@@ -71,6 +71,24 @@ npm run dev:coach
 npm run dev:ecommerce
 ```
 
+## 🎯 Demo Sites
+
+### Cleaning Services (Baseline Template)
+
+The cleaning demo site serves as the **baseline template** for all future portfolio demos. It has been polished and hardened with:
+
+- ✅ Centralized configuration (no hardcoded brand names)
+- ✅ Demo-safe contact information
+- ✅ Optimized CTA text for lead generation
+- ✅ Testimonial disclaimers
+- ✅ Fully responsive layout
+- ✅ Security verified (CodeQL scanned)
+
+To create a new demo site, simply:
+1. Copy the cleaning site folder
+2. Update `src/config/siteConfig.ts` with new branding
+3. Customize niche-specific content and imagery
+
 ## 📄 Pages Structure
 
 Each demo site includes the following pages:
@@ -105,13 +123,7 @@ Usage in pages:
 ---
 import Layout from '@shared/components/Layout.astro';
 import '@shared/styles/global.css';
-
-const siteConfig = {
-  siteName: 'Your Business Name',
-  siteTagline: 'Your business tagline',
-  contactEmail: 'info@yourbusiness.com',
-  contactPhone: '(555) 123-4567'
-};
+import { siteConfig } from '../config/siteConfig';
 ---
 
 <Layout 
@@ -121,6 +133,26 @@ const siteConfig = {
 >
   <!-- Your page content -->
 </Layout>
+```
+
+**Best Practice:** Create a centralized `src/config/siteConfig.ts` file to store all site-specific configuration (business name, contact info, CTA text, etc.). This makes it easy to:
+- Avoid hardcoded brand names throughout your pages
+- Maintain consistency across all pages
+- Quickly duplicate the site for other niches by just updating the config file
+
+Example siteConfig.ts:
+```typescript
+export const siteConfig = {
+  siteName: 'Your Business Name',
+  siteTagline: 'Your business tagline',
+  contactEmail: 'contact@demo-business.example.com',
+  contactPhone: '(555) 123-4567',
+  serviceArea: 'Your City and surrounding areas',
+  cta: {
+    primary: 'Schedule Your Free Estimate',
+    secondary: 'Get Your Free Quote Today'
+  }
+};
 ```
 
 **Note:** The `@shared` alias is configured in each site's `astro.config.mjs` to simplify imports from the shared directory.
