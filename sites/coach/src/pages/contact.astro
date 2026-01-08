@@ -1,0 +1,214 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`Contact - ${siteConfig.siteName}`}
+  description={`Book your free consultation with ${siteConfig.siteName} and start your transformation today`}
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>Let's Talk About Your Goals</h1>
+      <p>Book your free consultation—no obligation, just honest conversation</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start;">
+        <div>
+          <h2 style="text-align: left; margin-bottom: 1.5rem;">Get In Touch</h2>
+          <div class="card">
+            <h3>📞 Phone</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+              <a href={`tel:${siteConfig.contactPhone.replace(/\D/g, '')}`} style="color: #3498db; text-decoration: none;">{siteConfig.contactPhone}</a>
+            </p>
+            
+            <h3>📧 Email</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+              <a href={`mailto:${siteConfig.contactEmail}`} style="color: #3498db; text-decoration: none;">{siteConfig.contactEmail}</a>
+            </p>
+            
+            <h3>📍 Training Location</h3>
+            <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
+              {siteConfig.serviceArea}
+            </p>
+            
+            <h3>🕐 Availability</h3>
+            <p style="font-size: 1.1rem;">
+              Monday - Friday: 6:00 AM - 8:00 PM<br>
+              Saturday: 7:00 AM - 2:00 PM<br>
+              Sunday: By appointment only
+            </p>
+          </div>
+
+          <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, #3498db, #2c3e50); color: white;">
+            <h3 style="color: white;">💎 Free Consultation Includes:</h3>
+            <ul style="list-style: none; padding-left: 0; margin-top: 1rem;">
+              <li>✓ Goal assessment and discussion</li>
+              <li>✓ Fitness and lifestyle evaluation</li>
+              <li>✓ Custom program recommendations</li>
+              <li>✓ Pricing and package options</li>
+              <li>✓ No pressure, no obligation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <h2 style="text-align: left; margin-bottom: 1.5rem;">{siteConfig.cta.primary}</h2>
+          <!-- Note: This is a demo form. In production, configure the action attribute 
+               to use a form handling service like Netlify Forms, Formspree, or AWS API Gateway -->
+          <form class="card" action="#" onsubmit="event.preventDefault(); alert('This is a demo form. Configure a form handler for production use.');">
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" required />
+            </div>
+
+            <div class="form-group">
+              <label for="goal">Primary Goal *</label>
+              <select id="goal" name="goal" required>
+                <option value="">Select your primary goal...</option>
+                <option value="weight-loss">Weight Loss</option>
+                <option value="muscle-building">Build Muscle</option>
+                <option value="performance">Athletic Performance</option>
+                <option value="general-fitness">General Fitness</option>
+                <option value="post-rehab">Post-Rehab/Injury Recovery</option>
+                <option value="nutrition">Nutrition Coaching</option>
+                <option value="lifestyle">Lifestyle Transformation</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="experience">Current Fitness Level *</label>
+              <select id="experience" name="experience" required>
+                <option value="">Select your fitness level...</option>
+                <option value="beginner">Beginner - New to fitness</option>
+                <option value="intermediate">Intermediate - Some experience</option>
+                <option value="advanced">Advanced - Experienced athlete</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell me about your goals *</label>
+              <textarea id="message" name="message" required placeholder="What do you want to achieve? What challenges have you faced? What's your timeline?"></textarea>
+            </div>
+
+            <div class="form-group">
+              <label for="availability">Preferred Consultation Time</label>
+              <select id="availability" name="availability">
+                <option value="">Select a time preference...</option>
+                <option value="morning">Morning (6am-12pm)</option>
+                <option value="afternoon">Afternoon (12pm-5pm)</option>
+                <option value="evening">Evening (5pm-8pm)</option>
+                <option value="weekend">Weekend</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn" style="width: 100%;">{siteConfig.cta.primary}</button>
+
+            <p style="font-size: 0.9rem; color: #666; margin-top: 1rem; text-align: center;">
+              I'll respond within 24 hours to schedule your free consultation call.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>What Happens Next?</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card">
+          <h3>1️⃣ Submit Your Info</h3>
+          <p>Fill out the form with your goals and preferences. The more details, the better I can help.</p>
+        </div>
+        <div class="card">
+          <h3>2️⃣ Schedule Your Call</h3>
+          <p>I'll reach out within 24 hours to schedule your free 30-minute consultation.</p>
+        </div>
+        <div class="card">
+          <h3>3️⃣ Strategy Session</h3>
+          <p>We'll discuss your goals, assess your situation, and create a roadmap to success.</p>
+        </div>
+        <div class="card">
+          <h3>4️⃣ Start Your Journey</h3>
+          <p>If we're a good fit, we'll get you started on your transformation immediately.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>Is the consultation really free?</h3>
+          <p>Yes! The consultation is completely free with no obligation. It's a chance for us to get to know each other and see if we're a good fit.</p>
+        </div>
+        
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>Do you offer virtual coaching?</h3>
+          <p>Absolutely! I offer both in-person and virtual coaching options. Many of my clients train with me entirely online.</p>
+        </div>
+        
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>What if I'm a complete beginner?</h3>
+          <p>Perfect! I work with beginners all the time. We'll start where you are and build from there—no judgment, just progress.</p>
+        </div>
+
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>How long until I see results?</h3>
+          <p>Most clients start seeing visible changes within 4-6 weeks. However, everyone's journey is different based on their starting point and goals.</p>
+        </div>
+
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>Do you work with injuries or medical conditions?</h3>
+          <p>Yes, I have experience working with clients post-rehab and with various conditions. I always recommend getting medical clearance first.</p>
+        </div>
+
+        <div class="card" style="text-align: left; margin-bottom: 1rem;">
+          <h3>What's your cancellation policy?</h3>
+          <p>I require 24 hours notice for cancellations. Life happens, and I'm flexible, but consistent sessions lead to better results.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2>Ready to Transform Your Life?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Don't wait another day to start your journey. The best time to begin was yesterday. 
+          The second best time is right now.
+        </p>
+        <a href="#" onclick="document.getElementById('name').scrollIntoView({behavior: 'smooth'}); return false;" class="btn">{siteConfig.cta.secondary}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  @media (max-width: 768px) {
+    section .content-container > div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>

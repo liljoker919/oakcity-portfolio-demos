@@ -1,0 +1,128 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`${siteConfig.siteName} - Personal Training & Life Coaching`}
+  description="Expert coaching for transformation and results. Achieve your fitness and life goals with personalized guidance."
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>Transform Your Body, Elevate Your Life</h1>
+      <p>Personalized coaching designed to help you achieve breakthrough results</p>
+      <a href="/contact" class="btn">{siteConfig.cta.primary}</a>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Real Transformation. Real Results.</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>💪 Personal Training</h3>
+          <p>Customized fitness programs designed around your goals, schedule, and fitness level. Get stronger, leaner, and more confident with expert guidance.</p>
+        </div>
+        <div class="card">
+          <h3>🎯 Performance Coaching</h3>
+          <p>Break through plateaus and achieve peak performance with proven strategies used by athletes and high achievers.</p>
+        </div>
+        <div class="card">
+          <h3>🧘 Lifestyle Optimization</h3>
+          <p>Sustainable habits that transform your nutrition, recovery, and mindset for long-term success.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Why Choose {siteConfig.siteName}?</h2>
+      <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          I don't believe in one-size-fits-all programs. Every client gets a customized plan based on their unique goals, 
+          lifestyle, and challenges. My approach combines science-backed methods with practical strategies that fit into your busy life.
+        </p>
+        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); margin-top: 3rem;">
+          <div>
+            <h3 style="font-size: 3rem; color: #3498db; margin-bottom: 0.5rem;">500+</h3>
+            <p style="font-weight: bold;">Clients Transformed</p>
+          </div>
+          <div>
+            <h3 style="font-size: 3rem; color: #3498db; margin-bottom: 0.5rem;">10+</h3>
+            <p style="font-weight: bold;">Years Experience</p>
+          </div>
+          <div>
+            <h3 style="font-size: 3rem; color: #3498db; margin-bottom: 0.5rem;">98%</h3>
+            <p style="font-weight: bold;">Client Satisfaction</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Success Stories</h2>
+      <div class="grid">
+        <div class="card">
+          <p>"I lost 45 pounds and gained confidence I never knew I had. The coaching went beyond just fitness—it changed my entire approach to life."</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- Michael T.</p>
+          <p style="font-size: 0.9rem; color: #666; font-style: italic;">Results: -45 lbs in 6 months</p>
+        </div>
+        <div class="card">
+          <p>"After years of injuries, I finally found a coach who understood my limitations and worked with me, not against me. I'm stronger now at 52 than I was at 35."</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- Jennifer S.</p>
+          <p style="font-size: 0.9rem; color: #666; font-style: italic;">Results: Pain-free training, increased strength</p>
+        </div>
+        <div class="card">
+          <p>"The performance coaching helped me break through plateaus I'd been stuck at for years. I PR'd in every lift and feel incredible."</p>
+          <p style="font-weight: bold; margin-top: 1rem;">- David R.</p>
+          <p style="font-size: 0.9rem; color: #666; font-style: italic;">Results: Personal records across all lifts</p>
+        </div>
+      </div>
+      <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #666; font-style: italic;">
+        *Testimonials are representative examples for demonstration purposes only. Individual results may vary.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <h2>Ready to Start Your Transformation?</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Book your free consultation today. We'll discuss your goals, assess your current situation, 
+          and create a roadmap to your success—no obligation, no pressure.
+        </p>
+        <a href="/contact" class="btn">{siteConfig.cta.secondary}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Certifications & Credentials</h2>
+      <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+        <div class="card">
+          <h3>✅ NASM Certified</h3>
+          <p>National Academy of Sports Medicine Personal Trainer</p>
+        </div>
+        <div class="card">
+          <h3>✅ Precision Nutrition</h3>
+          <p>Level 2 Nutrition Coach Certification</p>
+        </div>
+        <div class="card">
+          <h3>✅ Performance Coach</h3>
+          <p>Certified in Strength & Conditioning</p>
+        </div>
+        <div class="card">
+          <h3>✅ Insured & Bonded</h3>
+          <p>Fully insured professional services</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
