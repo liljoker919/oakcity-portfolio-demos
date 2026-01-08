@@ -1,17 +1,11 @@
 ---
 import Layout from '@shared/components/Layout.astro';
 import '@shared/styles/global.css';
-
-const siteConfig = {
-  siteName: 'Oak City Cleaning',
-  siteTagline: 'Professional cleaning services you can trust.',
-  contactEmail: 'info@oakcitycleaning.com',
-  contactPhone: '(555) 123-4567'
-};
+import { siteConfig } from '../config/siteConfig';
 ---
 
 <Layout 
-  title="Our Services - Oak City Cleaning" 
+  title={`Our Services - ${siteConfig.siteName}`}
   description="Comprehensive residential and commercial cleaning services tailored to your needs"
   {...siteConfig}
 >
@@ -142,7 +136,7 @@ const siteConfig = {
         <p style="font-size: 1.1rem; margin-bottom: 2rem;">
           Contact us today for a free consultation and custom quote. We'll work with you to create a cleaning plan that fits your needs and budget.
         </p>
-        <a href="/contact" class="btn">Request a Free Quote</a>
+        <a href="/contact" class="btn">{siteConfig.cta.secondary}</a>
       </div>
     </div>
   </section>

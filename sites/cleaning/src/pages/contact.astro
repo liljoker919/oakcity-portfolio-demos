@@ -1,18 +1,12 @@
 ---
 import Layout from '@shared/components/Layout.astro';
 import '@shared/styles/global.css';
-
-const siteConfig = {
-  siteName: 'Oak City Cleaning',
-  siteTagline: 'Professional cleaning services you can trust.',
-  contactEmail: 'info@oakcitycleaning.com',
-  contactPhone: '(555) 123-4567'
-};
+import { siteConfig } from '../config/siteConfig';
 ---
 
 <Layout 
-  title="Contact Us - Oak City Cleaning" 
-  description="Get in touch with Oak City Cleaning for a free quote or to schedule your cleaning service"
+  title={`Contact Us - ${siteConfig.siteName}`}
+  description={`Get in touch with ${siteConfig.siteName} for a free quote or to schedule your cleaning service`}
   {...siteConfig}
 >
   <div class="hero">
@@ -30,17 +24,17 @@ const siteConfig = {
           <div class="card">
             <h3>📞 Phone</h3>
             <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-              <a href="tel:5551234567" style="color: #3498db; text-decoration: none;">(555) 123-4567</a>
+              <a href={`tel:${siteConfig.contactPhone.replace(/\D/g, '')}`} style="color: #3498db; text-decoration: none;">{siteConfig.contactPhone}</a>
             </p>
             
             <h3>📧 Email</h3>
             <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-              <a href="mailto:info@oakcitycleaning.com" style="color: #3498db; text-decoration: none;">info@oakcitycleaning.com</a>
+              <a href={`mailto:${siteConfig.contactEmail}`} style="color: #3498db; text-decoration: none;">{siteConfig.contactEmail}</a>
             </p>
             
             <h3>📍 Service Area</h3>
             <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-              Oak City and surrounding areas
+              {siteConfig.serviceArea}
             </p>
             
             <h3>🕐 Business Hours</h3>
@@ -102,7 +96,7 @@ const siteConfig = {
 
   <section class="section section-alt">
     <div class="content-container">
-      <h2>Why Choose Oak City Cleaning?</h2>
+      <h2>Why Choose {siteConfig.siteName}?</h2>
       <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
         <div class="card">
           <h3>✅ Free Quotes</h3>

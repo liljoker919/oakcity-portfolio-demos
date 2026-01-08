@@ -1,17 +1,11 @@
 ---
 import Layout from '@shared/components/Layout.astro';
 import '@shared/styles/global.css';
-
-const siteConfig = {
-  siteName: 'Oak City Cleaning',
-  siteTagline: 'Professional cleaning services you can trust.',
-  contactEmail: 'info@oakcitycleaning.com',
-  contactPhone: '(555) 123-4567'
-};
+import { siteConfig } from '../config/siteConfig';
 ---
 
 <Layout 
-  title="Oak City Cleaning - Professional Cleaning Services" 
+  title={`${siteConfig.siteName} - Professional Cleaning Services`}
   description="Professional residential and commercial cleaning services you can trust"
   {...siteConfig}
 >
@@ -19,13 +13,13 @@ const siteConfig = {
     <div class="content-container">
       <h1>Professional Cleaning Services</h1>
       <p>Making your space sparkle with reliable, eco-friendly cleaning solutions</p>
-      <a href="/contact" class="btn">Get a Free Quote</a>
+      <a href="/contact" class="btn">{siteConfig.cta.primary}</a>
     </div>
   </div>
 
   <section class="section">
     <div class="content-container">
-      <h2>Why Choose Oak City Cleaning?</h2>
+      <h2>Why Choose {siteConfig.siteName}?</h2>
       <div class="grid">
         <div class="card">
           <h3>🏡 Residential Cleaning</h3>
@@ -48,7 +42,7 @@ const siteConfig = {
       <h2>Our Commitment to Quality</h2>
       <div style="max-width: 800px; margin: 0 auto; text-align: center;">
         <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-          At Oak City Cleaning, we understand that your home or business is important to you. 
+          At {siteConfig.siteName}, we understand that your home or business is important to you. 
           That's why we provide meticulous attention to detail, reliable service, and complete satisfaction with every cleaning.
         </p>
         <p style="font-size: 1.1rem;">
@@ -66,7 +60,7 @@ const siteConfig = {
       <h2>Customer Testimonials</h2>
       <div class="grid">
         <div class="card">
-          <p>"Oak City Cleaning has been amazing! My house has never looked better. Their attention to detail is incredible."</p>
+          <p>"{siteConfig.siteName} has been amazing! My house has never looked better. Their attention to detail is incredible."</p>
           <p style="font-weight: bold; margin-top: 1rem;">- Sarah M.</p>
         </div>
         <div class="card">
@@ -78,6 +72,9 @@ const siteConfig = {
           <p style="font-weight: bold; margin-top: 1rem;">- Emily R.</p>
         </div>
       </div>
+      <p style="text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #666; font-style: italic;">
+        *Testimonials are representative examples for demonstration purposes only.
+      </p>
     </div>
   </section>
 </Layout>
