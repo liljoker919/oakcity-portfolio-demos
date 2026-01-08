@@ -1,0 +1,115 @@
+---
+import Layout from '@shared/components/Layout.astro';
+import '@shared/styles/global.css';
+import '../styles/custom.css';
+import { siteConfig } from '../config/siteConfig';
+---
+
+<Layout 
+  title={`About Us - ${siteConfig.siteName}`}
+  description="Learn about our skilled handyman team and our commitment to quality home repairs"
+  {...siteConfig}
+>
+  <div class="hero">
+    <div class="content-container">
+      <h1>About {siteConfig.siteName}</h1>
+      <p>Your trusted partner in home repairs and improvements since {siteConfig.foundedYear}</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="content-container">
+      <div style="max-width: 800px; margin: 0 auto;">
+        <h2>Our Story</h2>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          {siteConfig.siteName} was founded with a simple mission: to provide reliable, high-quality handyman services 
+          that help homeowners maintain and improve their properties. What started as a one-person operation has grown 
+          into a trusted home repair service serving families and homeowners throughout the area.
+        </p>
+        <p style="font-size: 1.1rem; line-height: 1.8;">
+          We believe that every home deserves professional care and attention. Whether it's a minor repair or a major 
+          improvement project, we approach every job with the same dedication to quality workmanship and customer satisfaction.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Our Values</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>🎯 Quality Craftsmanship</h3>
+          <p>We take pride in our work and strive for excellence in every repair and installation we complete.</p>
+        </div>
+        <div class="card">
+          <h3>🤝 Reliability</h3>
+          <p>You can count on us to show up on time, complete the job right, and stand behind our work.</p>
+        </div>
+        <div class="card">
+          <h3>🔒 Trustworthiness</h3>
+          <p>All our handymen are background-checked, licensed, insured, and trained to respect your home and privacy.</p>
+        </div>
+        <div class="card">
+          <h3>💰 Fair Pricing</h3>
+          <p>We provide transparent, competitive pricing with no hidden fees or surprise charges.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="content-container">
+      <h2>Why Choose Us?</h2>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Skilled Professionals</h3>
+          <p>
+            Our handymen have years of experience in home repair, maintenance, and improvement projects. We stay 
+            current with the latest techniques, tools, and building codes to ensure quality results.
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Wide Range of Services</h3>
+          <p>
+            From plumbing and electrical work to carpentry and painting, we handle a comprehensive range of home 
+            repair and improvement services. One call does it all!
+          </p>
+        </div>
+        
+        <div class="card" style="margin-bottom: 1.5rem;">
+          <h3>Quality Guarantee</h3>
+          <p>
+            We stand behind our work with a satisfaction guarantee. If you're not completely happy with the results, 
+            we'll make it right. Your satisfaction is our top priority.
+          </p>
+        </div>
+        
+        <div class="card">
+          <h3>Fully Licensed & Insured</h3>
+          <p>
+            For your peace of mind, {siteConfig.siteName} is fully licensed and insured. We take every precaution to 
+            protect your property and ensure safe, code-compliant work.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="content-container">
+      <h2>Our Service Area</h2>
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          We proudly serve {siteConfig.serviceArea}. Whether you need a quick repair or a major 
+          home improvement project, we're here to help.
+        </p>
+        <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+          Not sure if we service your area? Give us a call—we're always expanding our reach to serve more customers!
+        </p>
+        <a href="/contact" class="btn">{siteConfig.cta.tertiary}</a>
+      </div>
+    </div>
+  </section>
+</Layout>
