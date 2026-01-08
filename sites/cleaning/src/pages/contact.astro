@@ -24,7 +24,7 @@ import { siteConfig } from '../config/siteConfig';
           <div class="card">
             <h3>📞 Phone</h3>
             <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">
-              <a href="tel:5551234567" style="color: #3498db; text-decoration: none;">(555) 123-4567</a>
+              <a href={`tel:${siteConfig.contactPhone.replace(/\D/g, '')}`} style="color: #3498db; text-decoration: none;">{siteConfig.contactPhone}</a>
             </p>
             
             <h3>📧 Email</h3>
