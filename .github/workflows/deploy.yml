@@ -44,7 +44,6 @@ jobs:
           
           # Upload HTML files with shorter cache for faster updates
           aws s3 sync sites/cleaning/dist/ s3://${{ secrets.S3_BUCKET_CLEANING }} \
-            --delete \
             --cache-control "public, max-age=300, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
@@ -101,7 +100,6 @@ jobs:
           
           # Upload HTML files with shorter cache for faster updates
           aws s3 sync sites/handyman/dist/ s3://${{ secrets.S3_BUCKET_HANDYMAN }} \
-            --delete \
             --cache-control "public, max-age=300, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
@@ -158,7 +156,6 @@ jobs:
           
           # Upload HTML files with shorter cache for faster updates
           aws s3 sync sites/coach/dist/ s3://${{ secrets.S3_BUCKET_COACH }} \
-            --delete \
             --cache-control "public, max-age=300, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
@@ -215,7 +212,6 @@ jobs:
           
           # Upload HTML files with shorter cache for faster updates
           aws s3 sync sites/freelancer/dist/ s3://${{ secrets.S3_BUCKET_FREELANCER }} \
-            --delete \
             --cache-control "public, max-age=300, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
