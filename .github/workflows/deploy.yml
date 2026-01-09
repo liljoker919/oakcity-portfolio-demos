@@ -10,6 +10,8 @@ jobs:
   # Deploy Cleaning Site
   deploy-cleaning:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout repository
@@ -66,6 +68,8 @@ jobs:
   # Deploy Handyman Site
   deploy-handyman:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout repository
@@ -122,6 +126,8 @@ jobs:
   # Deploy Coach Site
   deploy-coach:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout repository
@@ -178,6 +184,8 @@ jobs:
   # Deploy Freelancer Site
   deploy-freelancer:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     
     steps:
       - name: Checkout repository
