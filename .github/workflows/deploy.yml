@@ -1,0 +1,240 @@
+name: Deploy Demo Sites to AWS S3 and CloudFront
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  # Deploy Cleaning Site
+  deploy-cleaning:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Cleaning site
+        run: npm run build:cleaning
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync sites/cleaning/dist/ s3://${{ secrets.S3_BUCKET_CLEANING }} \
+            --delete \
+            --cache-control "public, max-age=3600" \
+            --exclude "*.html" \
+            --exclude "*.xml"
+          
+          # Upload HTML files with shorter cache for faster updates
+          aws s3 sync sites/cleaning/dist/ s3://${{ secrets.S3_BUCKET_CLEANING }} \
+            --delete \
+            --cache-control "public, max-age=300, must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.xml"
+
+      - name: Create CloudFront invalidation
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_CLEANING }} \
+            --paths "/*"
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Cleaning site deployment completed successfully!"
+          echo "🌐 Website URL: https://${{ secrets.S3_BUCKET_CLEANING }}"
+          echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_CLEANING }}"
+          echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_CLEANING }}"
+          echo ""
+          echo "⏰ CloudFront cache invalidation in progress (may take a few minutes)"
+
+  # Deploy Handyman Site
+  deploy-handyman:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Handyman site
+        run: npm run build:handyman
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync sites/handyman/dist/ s3://${{ secrets.S3_BUCKET_HANDYMAN }} \
+            --delete \
+            --cache-control "public, max-age=3600" \
+            --exclude "*.html" \
+            --exclude "*.xml"
+          
+          # Upload HTML files with shorter cache for faster updates
+          aws s3 sync sites/handyman/dist/ s3://${{ secrets.S3_BUCKET_HANDYMAN }} \
+            --delete \
+            --cache-control "public, max-age=300, must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.xml"
+
+      - name: Create CloudFront invalidation
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_HANDYMAN }} \
+            --paths "/*"
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Handyman site deployment completed successfully!"
+          echo "🌐 Website URL: https://${{ secrets.S3_BUCKET_HANDYMAN }}"
+          echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_HANDYMAN }}"
+          echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_HANDYMAN }}"
+          echo ""
+          echo "⏰ CloudFront cache invalidation in progress (may take a few minutes)"
+
+  # Deploy Coach Site
+  deploy-coach:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Coach site
+        run: npm run build:coach
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync sites/coach/dist/ s3://${{ secrets.S3_BUCKET_COACH }} \
+            --delete \
+            --cache-control "public, max-age=3600" \
+            --exclude "*.html" \
+            --exclude "*.xml"
+          
+          # Upload HTML files with shorter cache for faster updates
+          aws s3 sync sites/coach/dist/ s3://${{ secrets.S3_BUCKET_COACH }} \
+            --delete \
+            --cache-control "public, max-age=300, must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.xml"
+
+      - name: Create CloudFront invalidation
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_COACH }} \
+            --paths "/*"
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Coach site deployment completed successfully!"
+          echo "🌐 Website URL: https://${{ secrets.S3_BUCKET_COACH }}"
+          echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_COACH }}"
+          echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_COACH }}"
+          echo ""
+          echo "⏰ CloudFront cache invalidation in progress (may take a few minutes)"
+
+  # Deploy Freelancer Site
+  deploy-freelancer:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Freelancer site
+        run: npm run build:freelancer
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION || 'us-east-1' }}
+
+      - name: Sync files to S3
+        run: |
+          aws s3 sync sites/freelancer/dist/ s3://${{ secrets.S3_BUCKET_FREELANCER }} \
+            --delete \
+            --cache-control "public, max-age=3600" \
+            --exclude "*.html" \
+            --exclude "*.xml"
+          
+          # Upload HTML files with shorter cache for faster updates
+          aws s3 sync sites/freelancer/dist/ s3://${{ secrets.S3_BUCKET_FREELANCER }} \
+            --delete \
+            --cache-control "public, max-age=300, must-revalidate" \
+            --exclude "*" \
+            --include "*.html" \
+            --include "*.xml"
+
+      - name: Create CloudFront invalidation
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_FREELANCER }} \
+            --paths "/*"
+
+      - name: Deployment summary
+        run: |
+          echo "✅ Freelancer site deployment completed successfully!"
+          echo "🌐 Website URL: https://${{ secrets.S3_BUCKET_FREELANCER }}"
+          echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_FREELANCER }}"
+          echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_FREELANCER }}"
+          echo ""
+          echo "⏰ CloudFront cache invalidation in progress (may take a few minutes)"
