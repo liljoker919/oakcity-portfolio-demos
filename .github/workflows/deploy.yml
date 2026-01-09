@@ -59,7 +59,6 @@ jobs:
       - name: Deployment summary
         run: |
           echo "✅ Cleaning site deployment completed successfully!"
-          echo "🌐 Website URL: https://${{ secrets.S3_BUCKET_CLEANING }}"
           echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_CLEANING }}"
           echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_CLEANING }}"
           echo ""
@@ -117,7 +116,6 @@ jobs:
       - name: Deployment summary
         run: |
           echo "✅ Handyman site deployment completed successfully!"
-          echo "🌐 Website URL: https://${{ secrets.S3_BUCKET_HANDYMAN }}"
           echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_HANDYMAN }}"
           echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_HANDYMAN }}"
           echo ""
@@ -175,7 +173,6 @@ jobs:
       - name: Deployment summary
         run: |
           echo "✅ Coach site deployment completed successfully!"
-          echo "🌐 Website URL: https://${{ secrets.S3_BUCKET_COACH }}"
           echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_COACH }}"
           echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_COACH }}"
           echo ""
@@ -233,7 +230,6 @@ jobs:
       - name: Deployment summary
         run: |
           echo "✅ Freelancer site deployment completed successfully!"
-          echo "🌐 Website URL: https://${{ secrets.S3_BUCKET_FREELANCER }}"
           echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_FREELANCER }}"
           echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_FREELANCER }}"
           echo ""
