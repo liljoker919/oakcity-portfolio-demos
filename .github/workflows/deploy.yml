@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:  # Allow manual triggering
+  workflow_dispatch: # Allow manual triggering
 
 jobs:
   # Deploy Cleaning Site
@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,8 +20,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -43,7 +43,7 @@ jobs:
             --cache-control "public, max-age=3600" \
             --exclude "*.html" \
             --exclude "*.xml"
-          
+
           # Upload HTML files with shorter cache for faster updates
           aws s3 sync sites/cleaning/dist/ s3://${{ secrets.S3_BUCKET_CLEANING }} \
             --cache-control "public, max-age=300, must-revalidate" \
@@ -70,7 +70,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -78,8 +78,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -101,7 +101,7 @@ jobs:
             --cache-control "public, max-age=3600" \
             --exclude "*.html" \
             --exclude "*.xml"
-          
+
           # Upload HTML files with shorter cache for faster updates
           aws s3 sync sites/handyman/dist/ s3://${{ secrets.S3_BUCKET_HANDYMAN }} \
             --cache-control "public, max-age=300, must-revalidate" \
@@ -128,7 +128,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -136,8 +136,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -159,7 +159,7 @@ jobs:
             --cache-control "public, max-age=3600" \
             --exclude "*.html" \
             --exclude "*.xml"
-          
+
           # Upload HTML files with shorter cache for faster updates
           aws s3 sync sites/coach/dist/ s3://${{ secrets.S3_BUCKET_COACH }} \
             --cache-control "public, max-age=300, must-revalidate" \
@@ -181,12 +181,12 @@ jobs:
           echo ""
           echo "⏰ CloudFront cache invalidation in progress (may take a few minutes)"
 
-  # Deploy Freelancer Site
+  # Deploy VA Site
   deploy-freelancer:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -194,8 +194,8 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'npm'
+          node-version: "20"
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -212,14 +212,14 @@ jobs:
 
       - name: Sync files to S3
         run: |
-          aws s3 sync sites/freelancer/dist/ s3://${{ secrets.S3_BUCKET_FREELANCER }} \
+          aws s3 sync sites/freelancer/dist/ s3://${{ secrets.S3_BUCKET_VA }} \
             --delete \
             --cache-control "public, max-age=3600" \
             --exclude "*.html" \
             --exclude "*.xml"
-          
+
           # Upload HTML files with shorter cache for faster updates
-          aws s3 sync sites/freelancer/dist/ s3://${{ secrets.S3_BUCKET_FREELANCER }} \
+          aws s3 sync sites/freelancer/dist/ s3://${{ secrets.S3_BUCKET_VA }} \
             --cache-control "public, max-age=300, must-revalidate" \
             --exclude "*" \
             --include "*.html" \
@@ -228,13 +228,13 @@ jobs:
       - name: Create CloudFront invalidation
         run: |
           aws cloudfront create-invalidation \
-            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_FREELANCER }} \
+            --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_VA }} \
             --paths "/*"
 
       - name: Deployment summary
         run: |
-          echo "✅ Freelancer site deployment completed successfully!"
-          echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_FREELANCER }}"
-          echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_FREELANCER }}"
+          echo "✅ VA site deployment completed successfully!"
+          echo "📦 S3 Bucket: ${{ secrets.S3_BUCKET_VA }}"
+          echo "🚀 CloudFront Distribution: ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID_VA }}"
           echo ""
           echo "⏰ CloudFront cache invalidation in progress (may take a few minutes)"
